@@ -375,17 +375,30 @@ Try to put a blank line before...
 ...and after a horizontal rule.
 
 # 링크
-> 사용법 : `[주소에 대한 설명](URL링크 "타이틀")`
-
+> 사용법 : `[어떤 URL인지 설명](URL "하이퍼링크된곳에 마우스 올리면 나오는 글자")`
+```
+My favorite search engine is [Google](https://www.google.co.kr "구글")
+```
 My favorite search engine is [Google](https://www.google.co.kr "구글")
 
 > URL과 이메일주소를 빠르게 링크로 바꾸고 싶으면 꺽새("<" ">")에 넣으면 된다.
+```
+<https://www.markdownguide.org>
+<fake@example.com>
+```
 
-<http://www.google.co.kr>
-<pig07911@naver.com>
+<https://www.markdownguide.org>
+<fake@example.com>
 
+## 링크 강조
 > `**`로 감싸면 굵어지고 `*`로 감싸면 이태릭체가 된다. 링크가 코드임을 알리고 싶으면 주소에 대한 설명 부분을 백틱(`)으로 감싸주면 된다.
+```
+I love supporting the **[EFF](https://eff.org)**.
 
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+
+See the section on [`code`](#code).
+```
 I love supporting the **[EFF](https://eff.org)**.
 
 This is the *[Markdown Guide](https://www.markdownguide.org)*.
@@ -395,16 +408,24 @@ See the section on [`code`](#code).
 # 레퍼런스 스타일 링크
 
 > 레퍼런스 스타일 링크는 두가지 부분으로 나뉜다. 첫번째부분은 `[hobbit-hole][1]` 두번째 부분은 `[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle` 이런식으로 하면 hobbit-hole를 클릭하면 1번라벨의 주소로 가게 된다. 다음은 두번째부분의 링크 예시이다.
-
-`[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle
+```
+[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle
 [1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"
 [1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle 'Hobbit lifestyles'
 [1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle (Hobbit lifestyles)
 [1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> "Hobbit lifestyles"
 [1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> 'Hobbit lifestyles'
-[1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> (Hobbit lifestyles)`
+[1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> (Hobbit lifestyles)
+```
 
 > 다음은 레퍼런스 스타일의 적절한 예시이다.
+```
+In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
+of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to
+eat: it was a [hobbit-hole][1], and that means comfort.
+
+[1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> "Hobbit lifestyles"
+```
 
 In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
 of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to
@@ -412,119 +433,240 @@ eat: it was a [hobbit-hole][1], and that means comfort.
 
 [1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> "Hobbit lifestyles"
 
-> 주의사항 : URL에 띄어쓰기가 되어있다면 `%20`으로 매꿔줘야한다.
+> 주의사항 : URL에 공백이  있다면 공백을 `%20`으로 매꿔줘야한다.
 
-`[link](https://www.example.com/my%20great%20page)`
+```
+[link](https://www.example.com/my%20great%20page)
+```
+
+[link](https://www.example.com/my%20great%20page)
 
 # 탈출 문자
 > `*`는 순서없는 리스트에서 쓰이기 때문에 그냥 `*`를 쓰고싶다면 앞에 `\`를 붙여서 쓰면 `*`가 나온다.
+```
+\* Without the backslash, this would be a bullet in an unordered list.
+```
 
-    \* Without the backslash, this would be a bullet in an unordered list.
+\* Without the backslash, this would be a bullet in an unordered list.
 
 > 백슬래시와 같이 쓸 수 있는 문자들
 
-    \\ \` \* \_ \{ \} \[ \] \< \> \( \) \# \+ \- \. \! \|
+| Character | Name |
+| ---- | ----|
+| \\ | backslash |
+| \' | backtick |
+| \* | asterisk |
+| \_ | underscore |
+| \{ \} | curly braces |
+| \[ \] | brackets |
+| \< \> | angle brackets |
+| \( \) | parentheses |
+| \# | pound sign |
+| \+ | plus sign |
+| \- | minus sign |
+| \. | dot |
+| \! | exclamation mark |
+| \| | pipe |
 
-# 표 (확장)
+# HTML
+> 마크다운에서 전부는 아니지만 일부 HTML 태그를 사용할 수 있다.
 
-## 생성
-> 표를 추가하고싶으면 3개 이상의 하이픈(`-`)으로 각 열의 헤더를 구분해준뒤 `"|"`로 열을 분리할수 있다. 셀의 가로 길이는 자동조정된다.
+```
+This **word** is bold. This <em>word</em> is italic.
+```
 
+This **word** is bold. This <em>word</em> is italic.
+
+# 확장 문법
+- 비쥬얼스튜디오코드에서는 적용이 안되는 것도 있음 깃허브에 가면 적용됨.
+
+## 표 (확장)
+
+### 생성
+> 표를 추가하고싶으면 3개 이상의 하이픈(`-`)으로 각 열의 헤더를 구분해준뒤 `|` 로 열을 분리할수 있다. 셀의 가로 길이는 자동조정된다.
+```
 | Syntax      | Description |
 | ----------- | ----------- |
 | Header      | Title       |
 | Paragraph   | Text        |
-
-## 정렬
+```
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+### 정렬
 > 3개 이상의 하이픈(`-`)ㅇ,로 각 열의 헤더를 구분할때 ":"의 위치로 정렬을 할 수 있다. 세미콜론이 왼쪽에 붙으면 왼쪽 정렬 오른쪽에 붙으면 오른쪽 정렬 양쪽에 붙으면 가운데 정렬이다.
-
+```
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
-
-## 추가적인 것들
+```
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+### 추가적인 것들
 > 첫 행에 파이프를 양 끝에 붙였다면 다음 행부터는 안붙여도 된다. 단 비어있는 셀일 경우에는 파이프로 구분을 해줘야 한다.
-
+```
 | abc | defghi |
 :-: | -----------:
 bar | baz
-
-> 헤더를 구분해주는 하이픈은 반드시 행의 개수만큼 있어야 한다. 없으면 표로 인식되지 않는다.
-
+|    |aaa|
+```
+| abc | defghi |
+:-: | -----------:
+bar | baz
+|    |aaa|
+> 헤더를 구분해주는 하이픈은 반드시 열의 개수만큼 있어야 한다. 없으면 표로 인식되지 않는다.
+```
 | abc | def |
 | --- |
 | bar |
-
-> 헤더를 구분해 준다면 밑에 항목의 행들은 비어있어도 되고 넘치면 자동으로 잘린다.
-
+```
+| abc | def |
+| --- |
+| bar |
+> 헤더를 구분해 준다면 밑의 항목들은 비어있어도 되고 넘치면 자동으로 잘린다.
+```
 | abc | def |
 | --- | --- |
-|     |
+| bar |
+| bar | baz | boo |
+```
+| abc | def |
+| --- | --- |
 | bar |
 | bar | baz | boo |
 
-# 리스트 버튼
+## 리스트 버튼
 > "-"와 스페이스바 한칸 하고 "[ ]"를 붙인뒤 스페이스바 한칸 하고 버튼명을 적으면 된다.
-
+```
 - [ ] foo
 - [x] bar
-
+```
+- [ ] foo
+- [x] bar
 > 중첩 리스트 또한 가능 하다.
-
+```
+- [x] foo
+  - [ ] bar
+  - [x] baz
+- [ ] bim
+```
 - [x] foo
   - [ ] bar
   - [x] baz
 - [ ] bim
 
-# 취소선
+## 취소선
 > 취소선을 넣고싶은 문장의 앞뒤에 "~"를 2번 써주면 된다.
-
+```
+~~Hi~~ Hello, world!
+```
 ~~Hi~~ Hello, world!
 
 > 단 구문이 분리 되있으면 적용되지 않는다.
+```
+This ~~has a
 
+new paragraph~~.
+```
 This ~~has a
 
 new paragraph~~.
 
-# 자동링크
->자동링크는 `<`, `>` 없이 만들어진다. 모든 자동링크는 줄의 시작, 스페이스바 뒤에 쓰면 된다. 그리고 구분문자("*", "(" )로 구분 가능 하다.
+## 자동링크
+>자동링크는 `<`, `>` 없이 만들어진다. 모든 자동링크는 줄의 시작, 공백 뒤에 또는 구분문자(`* , _ , ~ , (`) 뒤에 올 수 있다.
 
 > 추가로 http는 자동으로 삽입된다.
-
+```
+www.commonmark.org
+```
 www.commonmark.org
 
+> url 앞 뒤는 공백을 넣어줌으로써 구분해준다.
+```
+Visit www.commonmark.org/help for more information.
+```
 Visit www.commonmark.org/help for more information.
 
-> 경로를 쓰고싶을때는 완전한 url 뒤에 쓰면 된다.
+> 링크 안에 구두점(`? ! . , : * _ ~)이 와도 링크로 인식이 됩니다.
+```
+Visit www.commonma?rk.c!o:*_m.a~.b.
+```
 
-Visit www.commonmark.org.
-
-Visit www.commonmark.org/a.b.
+Visit www.commonma?rk.c!o:*_m.a~.b.
 
 > 닫는괄호가 여는괄호보다 많을때는 별 신경 안써도 된다. 자동으로 남는 닫는 괄호는 문자 처리 된다.
-
+```
 www.google.com/search?q=Markup+(business)
 
 www.google.com/search?q=Markup+(business)))
 
->밑의 링크는 구분문자 "(" 때문에 스페이스바 없이 링크를 써도 된다.
+(www.google.com/search?q=Markup+(business))
+
+(www.google.com/search?q=Markup+(business)
+```
+www.google.com/search?q=Markup+(business)
+
+www.google.com/search?q=Markup+(business)))
 
 (www.google.com/search?q=Markup+(business))
 
 (www.google.com/search?q=Markup+(business)
 
-> "<" 는 즉시 자동링크를 끝낸다.
+> 링크가 `)` 로 끝나면 뒤에 공백이 없으면 계속 링크로 인식을 한다.
+```
+www.google.com/search?q=(business))+ok+OK-ok
+```
+www.google.com/search?q=(business))+ok+OK-ok
 
+> 자동링크가 `&HTML엔티티이름;`으로 끝나면 제외된다.
+```
+www.google.com/search?q=commonmark&amp;
+```
+www.google.com/search?q=commonmark&amp;
+
+> "<" 는 즉시 자동링크를 끝낸다.
+```
+www.commonmark.org/he<lp
+```
 www.commonmark.org/he<lp
 
 ## 이메일 자동링크
-> 이메일도 자동링크가 된다. 앞에 mailto:가 자동으로 붙는다. "@"뒤에 도메인 이름은 위의 자동링크의 규칙과 똑같다.
+> 이메일도 자동링크가 된다. 앞에 mailto:가 자동으로 붙는다.
 
-pig07911@naver.com
+> 규칙 
+1. 1개 또는 그 이상의 문자나 숫자 또는 `. - _ +` 가 온다.
+2. `@` 가 1개 있어야한다.
+3. 1개 또는 그 이상의 문자나 숫자 또는 `- _`는 `.` 으로 구분된다. 적어도 1개의 구분이 되야한다.
+
+```
+foo@bar.baz
+```
+foo@bar.baz
+
+> `+` 는 `@` 앞에 오면 안되고 `@` 뒤에 와야 한다.
+```
+hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
+```
+
+hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
+
+> 마지막 문자는 `- _` 로 끝나면 안된다.
+
+a.b-c_d@a.b
+
+a.b-c_d@a.b.
+
+a.b-c_d@a.b-
+
+a.b-c_d@a.b_
 
 # 허용되지 않은 HTML 태그
+
+> 밑의 태그들은 필터되서 결과에 출력되지 않는다.
 
 * `<title>`
 * `<textarea>`
@@ -535,11 +677,3 @@ pig07911@naver.com
 * `<noframes>`
 * `<script>`
 * `<plaintext>`
-
-> 위의 태그들은 필터되서 결과에 출력되지 않는다.
-
-<strong> title </style>
-
-<blockquote>
-  
-</blockquote>
