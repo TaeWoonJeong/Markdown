@@ -168,14 +168,14 @@ foo@bar.baz
 ```
 foo@bar.baz
 
-> `+` 는 `@` 앞에 오면 안되고 `@` 뒤에 와야 한다.
+> `+` 는 `@` 뒤에 오면 안되고 `@` 앞에는 와도 된다.
 ```
 hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
 ```
 
 hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
 
-> 마지막 문자는 `- _` 로 끝나면 안된다.
+> 마지막 문자는 `-` 나 `_` 로 끝나면 안된다.
 ```
 a.b-c_d@a.b
 
@@ -192,6 +192,7 @@ a.b-c_d@a.b.
 a.b-c_d@a.b-
 
 a.b-c_d@a.b_
+
 # 허용되지 않은 HTML 태그
 
 > 밑의 태그들은 필터되서 결과에 출력되지 않는다.
